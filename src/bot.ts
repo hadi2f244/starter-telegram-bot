@@ -8,8 +8,11 @@ import type { Variant as TextEffectVariant } from "./textEffects";
 // Create a bot using the Telegram token
 const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 
+http://api.navasan.tech/latest/\?api_key\=freeTve8NOLjCFZWmZr24wNOvcDnuYmc
+
 // Handle the /yo command to greet the user
-bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
+// bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
+bot.command("yo", (ctx) => ctx.reply(`Yo test`));
 
 // Handle the /effect command to apply text effects using an inline keyboard
 type Effect = { code: TextEffectVariant; label: string };
@@ -159,7 +162,7 @@ const aboutUrlKeyboard = new InlineKeyboard().url(
 
 // Suggest commands in the menu
 bot.api.setMyCommands([
-  { command: "yo", description: "Be greeted by the bot" },
+  { command: "usdt", description: "retrun Tether(USDT) price" },
   {
     command: "effect",
     description: "Apply text effects on the text. (usage: /effect [text])",
@@ -167,11 +170,10 @@ bot.api.setMyCommands([
 ]);
 
 // Handle all other messages and the /start command
-const introductionMessage = `Hello! I'm a Telegram bot.
-I'm powered by Cyclic, the next-generation serverless computing platform.
+const introductionMessage = `Hello! I'm a test Telegram bot to return .
 
 <b>Commands</b>
-/yo - Be greeted by me
+/usdt - return Tether(usdt) price
 /effect [text] - Show a keyboard to apply text effects to [text]`;
 
 const replyWithIntro = (ctx: any) =>
